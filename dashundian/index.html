@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="大顺店官方网站，提供正宗传统中式面点、烧饼、炸货等美食的线上订购与线下门店查询服务。了解大顺店的特色产品、营业时间及会员优惠信息。">
+    <meta name="keywords" content="大顺店, 中式面点, 烧饼, 炸货, 传统美食, 在线订购">
+    <title>大顺店-传统中式面点与美食服务</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8B4513; /* SaddleBrown - 传统木色 */
+            --secondary-color: #D2691E; /* Chocolate - 辅助色 */
+            --accent-color: #F4A460; /* SandyBrown - 点缀色 */
+            --bg-color: #FFF8F0; /* Cream - 纸张背景 */
+            --text-main: #333333;
+            --text-light: #666666;
+            --white: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(139, 69, 19, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            font-size: 14px;
+            color: var(--text-light);
+            font-weight: normal;
+            border: 1px solid var(--accent-color);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--secondary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--secondary-color);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+
+        /* Mobile Menu */
+        .mobile-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(139, 69, 19, 0.7), rgba(139, 69, 19, 0.7)), url('https://picsum.photos/seed/food_bg/1920/600') no-repeat center center/cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 12px 35px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-2px);
+            background-color: #fff;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 60px 20px;
+            background-color: var(--white);
+        }
+
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .feature-item {
+            padding: 20px;
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .feature-item h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        /* Products Section */
+        .products {
+            padding: 60px 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+        }
+
+        .products-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .product-info {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-tag {
+            font-size: 12px;
+            color: var(--accent-color);
+            background: rgba(244, 164, 96, 0.1);
+            padding: 4px 8px;
+            border-radius: 4px;
+            align-self: flex-start;
+            margin-bottom: 8px;
+        }
+
+        .product-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .product-desc {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        .add-btn {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 6px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .add-btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--white);
+            padding: 60px 20px;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 32px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        /* Store Hours & Location */
+        .info-section {
+            padding: 60px 20px;
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .info-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .info-card h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+            padding-bottom: 10px;
+        }
+
+        .info-list li {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .info-list span:last-child {
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c2c2c;
+            color: #999;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+            color: #ccc;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                height: auto;
+                padding: 15px 20px;
+                flex-wrap: wrap;
+            }
+
+            nav {
+                width: 100%;
+                margin-top: 15px;
+                display: none;
+            }
+
+            nav.show {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .hero-content h1 {
+                font-size: 32px;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                大顺店
+                <span>传统手作</span>
+            </div>
+            <div class="mobile-toggle" onclick="toggleMenu()">☰</div>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#home" class="active">首页</a></li>
+                    <li><a href="#products">招牌美食</a></li>
+                    <li><a href="#about">品牌故事</a></li>
+                    <li><a href="#info">门店信息</a></li>
+                    <li><a href="#contact">联系我们</a></li>
+                </ul>
+            </nav>
+            <a href="#products" class="cta-btn">立即订购</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>传承百年的匠心味道</h1>
+                <p>大顺店坚持传统古法工艺，为您呈现酥脆可口、香气扑鼻的中式面点与炸货，每一口都是时间的沉淀。</p>
+                <a href="#products" class="hero-btn">探索美味</a>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="features-container">
+                <article class="feature-item">
+                    <div class="feature-icon">🌾</div>
+                    <h3>精选食材</h3>
+                    <p>严选优质面粉、纯正食用油与天然香料，拒绝添加剂，保障健康美味。</p>
+                </article>
+                <article class="feature-item">
+                    <div class="feature-icon">👨‍🍳</div>
+                    <h3>手工制作</h3>
+                    <p>坚持每日现做现炸，揉面、发酵、成型、油炸，每一道工序都凝聚匠心。</p>
+                </article>
+                <article class="feature-item">
+                    <div class="feature-icon">🚚</div>
+                    <h3>新鲜配送</h3>
+                    <p>承诺当日新鲜出炉，提供同城配送服务，确保您吃到最新鲜的口感。</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="products">
+            <div class="section-header">
+                <h2>招牌美食推荐</h2>
+                <p>大顺店的经典系列，深受老顾客喜爱</p>
+            </div>
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <article class="product-card">
+                    <img src="https://picsum.photos/seed/shangbaitui/400/300" alt="大顺店招牌烧饼" class="product-image">
+                    <div class="product-info">
+                        <span class="product-tag">热销榜TOP1</span>
+                        <h3 class="product-title">五香烧饼</h3>
+                        <p class="product-desc">外皮酥脆掉渣，内里层次分明，芝麻香气浓郁，咸香适口。</p>
+                        <div class="product-footer">
+                            <span class="price">¥ 4.5 / 个</span>
+                            <button class="add-btn" onclick="addToCart('五香烧饼')">加入订单</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 2 -->
+                <article class="product-card">
+                    <img src="https://picsum.photos/seed/jingyutui/400/300" alt="精油肉排" class="product-image">
+                    <div class="product-info">
+                        <span class="product-tag">经典款</span>
+                        <h3 class="product-title">精油肉排</h3>
+                        <p class="product-desc">精选猪后腿肉，秘制香料腌制，外酥里嫩，肉汁丰富。</p>
+                        <div class="product-footer">
+                            <span class="price">¥ 8.0 / 份</span>
+                            <button class="add-btn" onclick="addToCart('精油肉排')">加入订单</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 3 -->
+                <article class="product-card">
+                    <img src="https://picsum.photos/seed/jitai/400/300" alt="鸡排" class="product-image">
+                    <div class="product-info">
+                        <span class="product-tag">人气推荐</span>
+                        <h3 class="product-title">黄金鸡排</h3>
+                        <p class="product-desc">大块鸡胸肉裹粉油炸，口感鲜嫩多汁，搭配独家辣椒粉。</p>
+                        <div class="product-footer">
+                            <span class="price">¥ 6.5 / 份</span>
+                            <button class="add-btn" onclick="addToCart('黄金鸡排')">加入订单</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 4 -->
+                <article class="product-card">
+                    <img src="https://picsum.photos/seed/youzhapi/400/300" alt="油渣包" class="product-image">
+                    <div class="product-info">
+                        <span class="product-tag">传统风味</span>
+                        <h3 class="product-title">油渣包</h3>
+                        <p class="product-desc">猪肉渣与葱花混合，一口爆汁，咸香适口，老少皆宜。</p>
+                        <div class="product-footer">
+                            <span class="price">¥ 5.0 / 个</span>
+                            <button class="add-btn" onclick="addToCart('油渣包')">加入订单</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="about-container">
+                <div class="about-text">
+                    <h2>关于大顺店</h2>
+                    <p>大顺店创立于上世纪九十年代，是一家专注于传统中式面点与油炸食品的老字号店铺。秉承“诚信经营、味道正宗”的经营理念，我们拒绝使用速冻半成品，坚持每日凌晨揉面、现炸现卖。</p>
+                    <p>无论是忙碌的上班族，还是寻找童年味道的老人，大顺店都能满足您对“家常味”的渴望。我们相信，真正的美味不需要复杂的调料，只需要对食材的尊重和对工艺的坚持。</p>
+                    <a href="#contact" class="cta-btn" style="display:inline-block; margin-top:10px;">了解更多</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://picsum.photos/seed/baker/600/400" alt="大顺店制作过程">
+                </div>
+            </div>
+        </section>
+
+        <!-- Info Section -->
+        <section id="info" class="info-section">
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>营业时间</h3>
+                    <ul class="info-list">
+                        <li><span>周一至周五</span> <span>06:00 - 20:00</span></li>
+                        <li><span>周六至周日</span> <span>05:30 - 21:00</span></li>
+                        <li><span>节假日</span> <span>05:00 - 22:00</span></li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3>联系方式</h3>
+                    <ul class="info-list">
+                        <li><span>电话咨询</span> <span>010-12345678</span></li>
+                        <li><span>外卖平台</span> <span>美团 / 饿了么</span></li>
+                        <li><span>配送范围</span> <span>方圆3公里内</span></li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3>店铺地址</h3>
+                    <p style="margin-bottom:10px;">北京市朝阳区幸福路88号大顺店美食城内</p>
+                    <p>地铁5号线幸福路口站B出口步行200米即到</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="footer-links">
+            <a href="#">关于我们</a>
+            <a href="#">产品目录</a>
+            <a href="#">隐私政策</a>
+            <a href="#">服务条款</a>
+        </div>
+        <p>&copy; 2023 大顺店 版权所有</p>
+        <p style="margin-top: 10px; font-size: 12px; color: #666;">本页面为设计演示，所有内容均为虚构，不代表真实商业信息。</p>
+    </footer>
+
+    <script>
+        // Toggle Mobile Menu
+        function toggleMenu() {
+            const nav = document.getElementById('main-nav');
+            nav.classList.toggle('show');
+        }
+
+        // Add to Cart Interaction (Simulation)
+        function addToCart(productName) {
+            // Create a temporary toast notification
+            const toast = document.createElement('div');
+            toast.textContent = `已将 "${productName}" 加入购物车`;
+            toast.style.position = 'fixed';
+            toast.style.bottom = '20px';
+            toast.style.right = '20px';
+            toast.style.backgroundColor = '#333';
+            toast.style.color = '#fff';
+            toast.style.padding = '12px 24px';
+            toast.style.borderRadius = '4px';
+            toast.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+            toast.style.zIndex = '2000';
+            toast.style.opacity = '0';
+            toast.style.transition = 'opacity 0.3s ease';
+
+            document.body.appendChild(toast);
+
+            // Trigger animation
+            setTimeout(() => {
+                toast.style.opacity = '1';
+            }, 10);
+
+            // Remove after 3 seconds
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                setTimeout(() => {
+                    document.body.removeChild(toast);
+                }, 300);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
