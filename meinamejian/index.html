@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>没那么坚强 - 拥抱脆弱的自我疗愈指南</title>
+    <meta name="description" content="“没那么坚强”是一个关于接纳脆弱、情绪管理与自我和解的深度内容平台。我们探讨如何放下伪装，在疲惫时允许自己停下，寻找真正的心灵栖息地。">
+    <meta name="keywords" content="没那么坚强, 情绪疗愈, 脆弱, 自我接纳, 心理健康, 情绪管理">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #6c5ce7;
+            --primary-light: #a29bfe;
+            --secondary-color: #2d3436;
+            --bg-color: #f9f9fc;
+            --card-bg: #ffffff;
+            --text-main: #2d3436;
+            --text-sub: #636e72;
+            --accent-warm: #fdcb6e;
+            --accent-cool: #00cec9;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+            --radius-md: 12px;
+            --radius-lg: 24px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            padding: 1rem 0;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-sub);
+            font-size: 0.95rem;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .btn-subscribe {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .btn-subscribe:hover {
+            background-color: #5649c0;
+            color: white;
+        }
+
+        /* Hero 区域 */
+        .hero {
+            position: relative;
+            padding: 6rem 0 8rem;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(108, 92, 231, 0.15) 0%, rgba(255,255,255,0) 70%);
+            z-index: -1;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        .hero h1 .highlight {
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero h1 .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 12px;
+            background-color: var(--accent-warm);
+            opacity: 0.4;
+            z-index: -1;
+            border-radius: 4px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-sub);
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .tag {
+            background: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            border: 1px solid #eee;
+        }
+
+        .hero-visual {
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            border-radius: var(--radius-lg);
+            padding: 3rem;
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 300px;
+            position: relative;
+        }
+
+        .hero-visual img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--radius-md);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            object-fit: cover;
+            max-height: 400px;
+        }
+
+        /* 内容区 */
+        .content-section {
+            padding: 4rem 0;
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+
+        .section-desc {
+            color: var(--text-sub);
+            margin-top: 0.5rem;
+            max-width: 600px;
+        }
+
+        /* 核心理念卡片 */
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .principle-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--radius-md);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid transparent;
+        }
+
+        .principle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+        }
+
+        .principle-card.blue { border-color: var(--accent-cool); }
+        .principle-card.purple { border-color: var(--primary-color); }
+        .principle-card.orange { border-color: var(--accent-warm); }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .blue .card-icon { background: rgba(0, 206, 201, 0.1); color: var(--accent-cool); }
+        .purple .card-icon { background: rgba(108, 92, 231, 0.1); color: var(--primary-color); }
+        .orange .card-icon { background: rgba(253, 203, 110, 0.2); color: #d35400; }
+
+        .principle-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .principle-card p {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+        }
+
+        /* 文章列表 */
+        .article-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .article-item {
+            display: flex;
+            background: var(--card-bg);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            transition: transform 0.2s;
+        }
+
+        .article-item:hover {
+            transform: translateX(5px);
+        }
+
+        .article-img {
+            width: 280px;
+            height: 200px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .article-content {
+            padding: 2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .article-meta {
+            font-size: 0.85rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .article-title {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+            font-weight: 700;
+        }
+
+        .article-excerpt {
+            color: var(--text-sub);
+            margin-bottom: 1.5rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .read-more {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .read-more::after {
+            content: '→';
+            margin-left: 5px;
+            transition: margin-left 0.2s;
+        }
+
+        .read-more:hover::after {
+            margin-left: 10px;
+        }
+
+        /* FAQ 区域 */
+        .faq-section {
+            background-color: white;
+            padding: 5rem 0;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 2rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 1.5rem 0;
+        }
+
+        .faq-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            color: var(--secondary-color);
+        }
+
+        .faq-item p {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+        }
+
+        /* 呼吁行动 */
+        .cta-section {
+            background: var(--primary-color);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+            margin: 4rem 0;
+            border-radius: var(--radius-lg);
+        }
+
+        .cta-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--primary-color);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        .btn-white:hover {
+            background: #f0f0f0;
+            transform: scale(1.05);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--secondary-color);
+            color: #b2bec3;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h5 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .article-item { flex-direction: column; }
+            .article-img { width: 100%; height: 200px; }
+            .nav-wrapper { flex-direction: column; gap: 1rem; }
+            nav ul { gap: 1rem; font-size: 0.9rem; }
+            .faq-grid { grid-template-columns: 1fr; }
+            .section-header { text-align: center; }
+            .section-desc { margin: 0 auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">没那么坚强<span>.</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">情绪日记</a></li>
+                    <li><a href="#">治愈文章</a></li>
+                    <li><a href="#">专家问答</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="btn-subscribe">加入社区</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-tags">
+                    <span class="tag">#允许自己休息</span>
+                    <span class="tag">#拒绝完美主义</span>
+                    <span class="tag">#情绪释放</span>
+                </div>
+                <h1>其实，你<span class="highlight">没那么坚强</span></h1>
+                <p>我们习惯了扮演无坚不摧的大人，却忘了承认疲惫。在这里，卸下防备，允许自己脆弱，拥抱真实而不完美的自己。</p>
+                
+                <div class="hero-visual">
+                    <img src="https://picsum.photos/seed/calmness/800/400" alt="平静的内心世界" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- 核心理念 -->
+        <section class="content-section">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2 class="section-title">重新定义“坚强”</h2>
+                        <p class="section-desc">真正的力量，不是从不流泪，而是含着眼泪依然奔跑。</p>
+                    </div>
+                </div>
+
+                <div class="principles-grid">
+                    <article class="principle-card blue">
+                        <div class="card-icon">🛡️</div>
+                        <h3>停止自我攻击</h3>
+                        <p>很多时候，让我们感到疲惫的不是外界压力，而是内心的自我审判。试着停止对自己说“你应该更坚强”，接纳当下的无力感。</p>
+                    </article>
+                    <article class="principle-card purple">
+                        <div class="card-icon">🌿</div>
+                        <h3>允许情绪流动</h3>
+                        <p>情绪没有好坏之分，它们只是信使。愤怒、悲伤、焦虑，都是身体在提醒你：“我需要被看见，我需要照顾。”</p>
+                    </article>
+                    <article class="principle-card orange">
+                        <div class="card-icon">☕</div>
+                        <h3>设立边界与休息</h3>
+                        <p>像手机需要充电一样，你的能量也是有限的。学会拒绝，学会在周末关机，学会在深夜允许自己做一个普通人。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 文章推荐 -->
+        <section class="content-section" style="background-color: #f4f4f9;">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">治愈文章</h2>
+                    <a href="#" style="color: var(--primary-color); font-weight: 600;">查看全部 &rarr;</a>
+                </div>
+
+                <div class="article-list">
+                    <article class="article-item">
+                        <img src="https://picsum.photos/seed/rain/400/300" alt="雨天窗景" class="article-img" loading="lazy">
+                        <div class="article-content">
+                            <div class="article-meta">情绪疗愈</div>
+                            <h3 class="article-title">为什么下雨天特别想哭？其实那是你的潜意识在求救</h3>
+                            <p class="article-excerpt">我们常说“男儿有泪不轻弹”，但这种压抑往往会导致更严重的心理内耗。雨天是一个绝佳的释放契机，试着允许眼泪流下来。</p>
+                            <a href="#" class="read-more">阅读全文</a>
+                        </div>
+                    </article>
+
+                    <article class="article-item">
+                        <img src="https://picsum.photos/seed/coffee/400/300" alt="一杯咖啡" class="article-img" loading="lazy">
+                        <div class="article-content">
+                            <div class="article-meta">生活方式</div>
+                            <h3 class="article-title">在这个快节奏的时代，做一个“无用”的人</h3>
+                            <p class="article-excerpt">我们总是被教导要高效、要上进。但偶尔停下来发呆，或者做一件完全没有意义的事情，其实是对心灵最好的滋养。</p>
+                            <a href="#" class="read-more">阅读全文</a>
+                        </div>
+                    </article>
+
+                    <article class="article-item">
+                        <img src="https://picsum.photos/seed/sleep/400/300" alt="安静的夜晚" class="article-img" loading="lazy">
+                        <div class="article-content">
+                            <div class="article-meta">自我关怀</div>
+                            <h3 class="article-title">如何与“焦虑”这个老朋友和平共处</h3>
+                            <p class="article-excerpt">焦虑并不可怕，它是人类生存的本能。当你感到焦虑时，试着不要对抗它，而是像对待一个受惊的孩子一样抱抱它。</p>
+                            <a href="#" class="read-more">阅读全文</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <div class="container">
+            <section class="cta-section">
+                <h2>给自己一个拥抱</h2>
+                <p>无论你今天经历了什么，无论你觉得自己有多糟糕，你都已经做得很好了。请记住，你不需要时刻都坚强。</p>
+                <a href="#" class="btn-white">分享你的故事</a>
+            </section>
+        </div>
+
+        <!-- FAQ -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">常见问题</h2>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h4>承认自己脆弱是不是很丢人？</h4>
+                        <p>绝对不是。脆弱是人性的一部分，也是连接他人的桥梁。只有当我们敢于展示伤口，才能真正获得治愈。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>我总是控制不住情绪，怎么办？</h4>
+                        <p>情绪失控时，先尝试物理隔离。离开现场，深呼吸，告诉自己“我现在很生气”，而不是“我不应该生气”。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>什么时候需要寻求专业心理咨询？</h4>
+                        <p>当你发现自己长期处于低落、失眠或无法正常工作的状态，且自我调节无效时，寻求专业帮助是勇敢的表现。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>如何停止过度思考？</h4>
+                        <p>把担心的事情写下来，分清“可控”和“不可控”的部分。把注意力集中在当下能做的微小行动上，而不是未来的灾难。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo" style="color: white; display: block; margin-bottom: 1rem;">没那么坚强.</a>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">一个专注于心理疗愈与自我接纳的线上社区。在这里，我们共同学习如何温柔地对待自己。</p>
+                </div>
+                <div class="footer-col">
+                    <h5>栏目</h5>
+                    <ul>
+                        <li><a href="#">情绪日记</a></li>
+                        <li><a href="#">深度文章</a></li>
+                        <li><a href="#">冥想引导</a></li>
+                        <li><a href="#">匿名树洞</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>关于</h5>
+                    <ul>
+                        <li><a href="#">我们的理念</a></li>
+                        <li><a href="#">联系编辑</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">免责声明</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>关注我们</h5>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">微博话题</a></li>
+                        <li><a href="#">小红书</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 没那么坚强. All Rights Reserved. 本站内容仅供交流参考，不构成医疗建议。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
