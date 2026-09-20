@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>萝莉的时间漫画-热门萝莉题材作品在线阅读与分类指南</title>
+    <meta name="description" content="萝莉的时间漫画专题页，提供热门萝莉题材漫画推荐、阅读指南及分类索引。收录经典少女成长、校园生活及治愈系作品，助您快速找到心仪的萝莉时间漫画阅读资源。">
+    <meta name="keywords" content="萝莉的时间漫画,萝莉题材漫画,少女漫画,在线阅读,漫画推荐">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff7eb3;
+            --secondary-color: #ff758c;
+            --accent-color: #7afcff;
+            --bg-color: #fdf2f8;
+            --card-bg: #ffffff;
+            --text-main: #2d3436;
+            --text-sub: #636e72;
+            --border-radius: 12px;
+            --shadow: 0 4px 15px rgba(255, 117, 140, 0.15);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--secondary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary-color);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            padding: 8px 15px 8px 35px;
+            border-radius: 20px;
+            border: 1px solid #eee;
+            background: #f8f9fa;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .search-box input:focus {
+            border-color: var(--secondary-color);
+            background: #fff;
+            box-shadow: 0 0 0 3px rgba(255, 117, 140, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-sub);
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            padding: 5px 15px;
+            background: #fff;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            border: 1px solid #eee;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tag:hover, .tag.active {
+            background: var(--secondary-color);
+            color: #fff;
+            border-color: var(--secondary-color);
+        }
+
+        /* Main Content */
+        .section-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 40px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .section-title h2 {
+            font-size: 1.5rem;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        .section-title h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 60px;
+            height: 2px;
+            background: var(--primary-color);
+        }
+
+        .view-all {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        .view-all:hover {
+            text-decoration: underline;
+        }
+
+        /* Grid System */
+        .manga-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .manga-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .manga-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(255, 117, 140, 0.25);
+        }
+
+        .card-cover {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background-color: #eee;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .manga-card:hover .card-cover img {
+            transform: scale(1.05);
+        }
+
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+            display: flex;
+            align-items: flex-end;
+            padding: 15px;
+        }
+
+        .manga-card:hover .card-overlay {
+            opacity: 1;
+        }
+
+        .btn-read {
+            background: var(--primary-color);
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            width: 100%;
+            text-align: center;
+        }
+
+        .card-info {
+            padding: 15px;
+        }
+
+        .card-title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            font-size: 0.8rem;
+            color: var(--text-sub);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card-rating {
+            color: #f1c40f;
+        }
+
+        /* Featured Section */
+        .featured-section {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .featured-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            display: flex;
+            min-height: 350px;
+        }
+
+        .featured-img {
+            width: 40%;
+            object-fit: cover;
+        }
+
+        .featured-content {
+            padding: 30px;
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .featured-badge {
+            display: inline-block;
+            background: #ffeaa7;
+            color: #d35400;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            width: fit-content;
+            margin-bottom: 10px;
+        }
+
+        .featured-title {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .featured-desc {
+            color: var(--text-sub);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        /* Sidebar List */
+        .sidebar-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sidebar-list a {
+            flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .sidebar-list .num {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Info Section */
+        .info-section {
+            background: #fff;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            margin-bottom: 60px;
+            box-shadow: var(--shadow);
+        }
+
+        .info-section h2 {
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .info-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .info-item p {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #fff;
+            padding: 50px 0 20px;
+            margin-top: 40px;
+            border-top: 1px solid #eee;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            color: #aaa;
+            font-size: 0.85rem;
+            padding-top: 20px;
+            border-top: 1px solid #f5f5f5;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+            
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .featured-section {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-card {
+                flex-direction: column;
+            }
+
+            .featured-img {
+                width: 100%;
+                height: 200px;
+            }
+
+            .featured-content {
+                width: 100%;
+                padding: 20px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <span>♡</span> 萝莉的时间漫画
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">最新更新</a></li>
+                    <li><a href="#">热门榜单</a></li>
+                    <li><a href="#">分类浏览</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" placeholder="搜索漫画标题...">
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>探索萝莉的时间漫画世界</h1>
+            <p>汇集全网最优质的少女题材作品，为您呈现温馨、治愈与成长的阅读时光。在这里，每一页都记录着纯真的瞬间。</p>
+            <div class="hero-tags">
+                <span class="tag active">全部</span>
+                <span class="tag">校园生活</span>
+                <span class="tag">治愈系</span>
+                <span class="tag">日常</span>
+                <span class="tag">成长</span>
+                <span class="tag">奇幻</span>
+            </div>
+        </section>
+
+        <!-- Featured Section -->
+        <section class="featured-section">
+            <article class="featured-card">
+                <img src="https://picsum.photos/seed/manga1/600/400" alt="精选封面" class="featured-img">
+                <div class="featured-content">
+                    <span class="featured-badge">本周推荐</span>
+                    <h2 class="featured-title">魔法少女的午后时光</h2>
+                    <p class="featured-desc">讲述了一个平凡的高中女生意外获得了魔法能力，必须在放学后的时间里守护城市的故事。画风清新，剧情温暖，深受读者喜爱。</p>
+                    <a href="#" class="btn-read" style="display:inline-block; width:auto;">立即阅读</a>
+                </div>
+            </article>
+            
+            <aside>
+                <div class="section-title">
+                    <h2>热门排行</h2>
+                </div>
+                <ul class="sidebar-list">
+                    <li><span class="num">1</span><a href="#">阳光下的约定</a></li>
+                    <li><span class="num">2</span><a href="#">秘密花园的日记</a></li>
+                    <li><span class="num">3</span><a href="#">转校生的初遇</a></li>
+                    <li><span class="num">4</span><a href="#">星空下的守望</a></li>
+                    <li><span class="num">5</span><a href="#">蓝调时刻的相遇</a></li>
+                    <li><span class="num">6</span><a href="#">糖果色的烦恼</a></li>
+                    <li><span class="num">7</span><a href="#">花开的季节</a></li>
+                </ul>
+            </aside>
+        </section>
+
+        <!-- Latest Updates -->
+        <section>
+            <div class="section-title">
+                <h2>最新更新</h2>
+                <a href="#" class="view-all">查看更多 &rarr;</a>
+            </div>
+            <div class="manga-grid">
+                <div class="manga-card">
+                    <div class="card-cover">
+                        <img src="https://picsum.photos/seed/girl1/300/400" alt="漫画封面">
+                        <div class="card-overlay">
+                            <a href="#" class="btn-read">开始阅读</a>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">夏日泡沫的约定</h3>
+                        <div class="card-meta">
+                            <span>更新至 45 话</span>
+                            <span class="card-rating">★ 9.2</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="manga-card">
+                    <div class="card-cover">
+                        <img src="https://picsum.photos/seed/girl2/300/400" alt="漫画封面">
+                        <div class="card-overlay">
+                            <a href="#" class="btn-read">开始阅读</a>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">猫咪与我的秘密</h3>
+                        <div class="card-meta">
+                            <span>更新至 12 话</span>
+                            <span class="card-rating">★ 8.8</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="manga-card">
+                    <div class="card-cover">
+                        <img src="https://picsum.photos/seed/girl3/300/400" alt="漫画封面">
+                        <div class="card-overlay">
+                            <a href="#" class="btn-read">开始阅读</a>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">图书馆的微光</h3>
+                        <div class="card-meta">
+                            <span>更新至 89 话</span>
+                            <span class="card-rating">★ 9.5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="manga-card">
+                    <div class="card-cover">
+                        <img src="https://picsum.photos/seed/girl4/300/400" alt="漫画封面">
+                        <div class="card-overlay">
+                            <a href="#" class="btn-read">开始阅读</a>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">放学后的练习生</h3>
+                        <div class="card-meta">
+                            <span>更新至 33 话</span>
+                            <span class="card-rating">★ 8.5</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category Highlights -->
+        <section>
+            <div class="section-title">
+                <h2>分类精选</h2>
+                <a href="#" class="view-all">浏览分类 &rarr;</a>
+            </div>
+            <div class="manga-grid">
+                <div class="manga-card">
+                    <div class="card-cover">
+                        <img src="https://picsum.photos/seed/cat/300/400" alt="治愈系">
+                        <div class="card-overlay">
+                            <a href="#" class="btn-read">进入分类</a>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">治愈系</h3>
+                        <div class="card-meta">
+                            <span>200+ 作品</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="manga-card">
+                    <div class="card-cover">
+                        <img src="https://picsum.photos/seed/school/300/400" alt="校园生活">
+                        <div class="card-overlay">
+                            <a href="#" class="btn-read">进入分类</a>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">校园生活</h3>
+                        <div class="card-meta">
+                            <span>150+ 作品</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="manga-card">
+                    <div class="card-cover">
+                        <img src="https://picsum.photos/seed/flower/300/400" alt="青春成长">
+                        <div class="card-overlay">
+                            <a href="#" class="btn-read">进入分类</a>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">青春成长</h3>
+                        <div class="card-meta">
+                            <span>180+ 作品</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="manga-card">
+                    <div class="card-cover">
+                        <img src="https://picsum.photos/seed/fantasy/300/400" alt="奇幻冒险">
+                        <div class="card-overlay">
+                            <a href="#" class="btn-read">进入分类</a>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">奇幻冒险</h3>
+                        <div class="card-meta">
+                            <span>90+ 作品</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide / Info Section -->
+        <section class="info-section">
+            <h2>关于萝莉的时间漫画</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <h3>什么是萝莉时间？</h3>
+                    <p>“萝莉时间”通常指代以少女为主角，侧重描写其日常生活、校园经历、情感萌芽或成长过程的漫画类型。这类作品强调温馨、纯真和治愈的阅读体验。</p>
+                </div>
+                <div class="info-item">
+                    <h3>常见题材风格</h3>
+                    <p>涵盖日常系、校园恋爱、魔法少女、治愈系以及带有轻微奇幻色彩的作品。画风多样，从写实到Q版均有，旨在唤起读者对青春岁月的共鸣。</p>
+                </div>
+                <div class="info-item">
+                    <h3>阅读指南</h3>
+                    <p>建议在光线充足的环境下阅读，并注意保护视力。本站收录的作品均经过筛选，确保内容健康积极，适合各年龄段读者。</p>
+                </div>
+                <div class="info-item">
+                    <h3>如何订阅更新</h3>
+                    <p>点击页面右上角的“收藏”按钮，即可第一时间获取最新章节的推送通知。加入我们的社区，与其他读者分享阅读心得。</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <a href="#" class="logo" style="margin-bottom: 15px; display:inline-block;">
+                        <span>♡</span> 萝莉的时间漫画
+                    </a>
+                    <p style="color:var(--text-sub); font-size:0.9rem;">专注于提供高质量的少女漫画阅读体验，汇聚全网热门作品。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">最新更新</a></li>
+                        <li><a href="#">排行榜</a></li>
+                        <li><a href="#">分类大全</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>热门标签</h4>
+                    <ul>
+                        <li><a href="#">校园恋爱</a></li>
+                        <li><a href="#">治愈系</a></li>
+                        <li><a href="#">日常番</a></li>
+                        <li><a href="#">少女漫</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li><a href="#">意见反馈</a></li>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">广告合作</a></li>
+                        <li><a href="#">加入我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 萝莉的时间漫画. All Rights Reserved. 本站仅提供作品索引，版权归原作者所有。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                          </html>
